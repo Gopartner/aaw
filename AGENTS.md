@@ -4,6 +4,26 @@
 
 AAW is a Textual-based TUI for Android app runtime analysis, with a modern responsive layout (sidebar on wide terminals), chat-like command input, and ADB integration.
 
+## Working Rules for AI Agents
+
+### Branch & Commit Policy
+1. **Always create a new branch** before starting any change:
+   ```bash
+   git checkout -b nama-branch
+   ```
+2. **Never** `git add .`, `git commit`, or `git push` directly — always ask the user first.
+3. Only merge/push to `main` when explicitly instructed.
+
+### TODO Tracking
+- Progress is tracked in `TODO.md` — update it whenever tasks complete or change status.
+- Keep sections: ✅ Completed, 🔜 Next (prioritized), 🐛 Known Issues.
+
+### General Conduct
+- Ask before taking irreversible actions (commit, push, merge, delete).
+- If unsure how to proceed, present options and wait for direction.
+- Always preserve existing conventions (code style, patterns, imports order).
+- Document architectural decisions and fixes in AGENTS.md when relevant.
+
 ## Tech Stack
 
 - **Python >= 3.10**, **Textual >= 0.41.0**, **Rich >= 13.0.0**
@@ -63,7 +83,7 @@ class MyScreen(BaseScreen):
 - Responsive layout: sidebar auto-hides below 110 columns (`@media`)
 - `#content-area` (left, 1fr) + `#sidebar-container` (right, 22 cols)
 - Header, Footer, sidebar with nav highlighting
-- Helper methods: `notify_info()`, `notify_error()`, `notify_success()`
+- Helper methods: `notify_info()`, `notify_error()`, `notify_success()`, `notify_warning()`
 
 ### Command Input (HomeScreen)
 HomeScreen memiliki `Input` widget untuk command chat-like:

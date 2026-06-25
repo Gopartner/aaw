@@ -30,3 +30,7 @@ build/
 # OS
 Thumbs.db
 .DS_Store
+
+# Project tracking (local only)
+TODO.md
+PROMPT.md

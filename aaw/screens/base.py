@@ -111,3 +111,6 @@ class BaseScreen(Screen):
 
     def notify_success(self, message: str):
         self.app.notify(message, severity="success", timeout=3)
+
+    def notify_warning(self, message: str):
+        self.app.notify(message, severity="warning", timeout=4)

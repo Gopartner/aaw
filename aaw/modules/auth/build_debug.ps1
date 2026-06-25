@@ -15,11 +15,10 @@ $d8bat = "$buildTools\d8.bat"
 $aapt2 = "$buildTools\aapt2.exe"
 $apksigner = "$buildTools\apksigner.bat"
 
-# Source directories — modules/auth/ is the single source of truth
-$moduleSrc = "$ModuleDir\..\modules\auth\src"
-$debugSrc = "$ModuleDir\src\main\java"
-$resDir = "$ModuleDir\..\modules\auth\res"
-$manifest = "$ModuleDir\src\main\AndroidManifest.xml"
+# Source directories
+$moduleSrc = "$ModuleDir\src"
+$resDir = "$ModuleDir\res"
+$manifest = "$ModuleDir\AndroidManifest.xml"
 
 # Output directories
 $classesDir = "$ModuleDir\build\classes"
@@ -36,10 +35,9 @@ New-Item -ItemType Directory -Path $resFlatDir -Force | Out-Null
 $kotlinStdlib = "$KotlinDir\lib\kotlin-stdlib.jar"
 if (-not (Test-Path $kotlinStdlib)) { Write-Error "kotlin-stdlib.jar not found"; exit 1 }
 
-# Find source files from both modules/auth/ (single source of truth) and debug wrapper
+# Find source files
 $authSrcFiles = Get-ChildItem -Path $moduleSrc -Recurse -Filter "*.kt" | Select-Object -ExpandProperty FullName
-$debugSrcFiles = Get-ChildItem -Path $debugSrc -Recurse -Filter "*.kt" | Select-Object -ExpandProperty FullName
-$srcFiles = $authSrcFiles + $debugSrcFiles
+$srcFiles = $authSrcFiles
 if (-not $srcFiles) { Write-Error "No Kotlin source files found"; exit 1 }
 Write-Host "Source files:" -ForegroundColor Yellow
 $srcFiles | ForEach-Object { Write-Host "  $_" }

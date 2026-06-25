@@ -2,7 +2,7 @@
 
 ## Overview
 
-AAW is a Textual-based TUI for Android app runtime analysis, with a modern responsive layout (sidebar on wide terminals).
+AAW is a Textual-based TUI for Android app runtime analysis, with a modern responsive layout (sidebar on wide terminals), chat-like command input, and ADB integration.
 
 ## Tech Stack
 
@@ -18,11 +18,12 @@ aaw/
 ├── data/
 │   └── __init__.py            # mock data (10 apps, timeline, tree)
 ├── screens/
-│   ├── __init__.py            # exports 9 classes (BaseScreen + 8 screens)
+│   ├── __init__.py            # exports 10 classes (BaseScreen + 9 screens)
 │   ├── base.py                # BaseScreen — responsive layout + sidebar
-│   ├── home.py                # logo, device info, menu
-│   ├── installed_apps.py      # app list + search
+│   ├── home.py                # logo, device info, menu, command input
+│   ├── installed_apps.py      # app list + search + filter
 │   ├── app_dashboard.py       # app detail + actions
+│   ├── auth_module.py         # auth module browser + build/install
 │   ├── live_runtime.py        # activity monitor
 │   ├── apk_collector.py       # APK pull/unpack/repack/sign
 │   ├── root_data.py           # root data collection
@@ -64,6 +65,12 @@ class MyScreen(BaseScreen):
 - Header, Footer, sidebar with nav highlighting
 - Helper methods: `notify_info()`, `notify_error()`, `notify_success()`
 
+### Command Input (HomeScreen)
+HomeScreen memiliki `Input` widget untuk command chat-like:
+- `exit` / `quit` / `q` — quit application
+- `help` / `?` — show available commands
+- `1`–`8` — navigate to menu item
+
 ### Navigation
 ```python
 # From any screen:
@@ -73,6 +80,7 @@ self.app.show_live_runtime(data)
 self.app.show_apk_collector(data)
 self.app.show_root_data(data)
 self.app.show_ai_workspace(data)
+self.app.show_auth_module()
 self.app.show_workspace_explorer()
 ```
 

@@ -22,6 +22,7 @@ Built with [Textual](https://textual.textualize.io/) — the modern TUI framewor
 - **Root Data Collection** — Collect app data directories (databases, shared prefs, files, cache)
 - **AI Workspace Generator** — Generate analysis workspaces with README, summaries, and prompt files
 - **Workspace Explorer** — Browse generated workspaces in a file tree
+- **Auth Module** — Browse, build, and deploy the Android OTP authentication module
 - **Responsive Sidebar** — Auto-hides on narrow terminals (<110 columns), togglable with F1
 - **Modern UI** — Catppuccin Mocha color scheme, hover animations, click interactions
 - **Command Input** — Chat-like command prompt for exit, help, and navigation
@@ -79,7 +80,7 @@ Press **1**-**8** or click any menu item to navigate:
 | 4   | Collect App Data (Root)|
 | 5   | Workspace Explorer     |
 | 6   | AI Workspace           |
-| 7   | Reports                |
+| 7   | Auth Module            |
 | 8   | Settings               |
 
 ### Global Keys
@@ -114,6 +115,7 @@ aaw/
 │   │   ├── home.py            # Home screen — logo, device panel, command input
 │   │   ├── installed_apps.py  # App list with filters + action panel
 │   │   ├── app_dashboard.py   # App detail + actions
+│   │   ├── auth_module.py     # Auth module browser + build
 │   │   ├── live_runtime.py    # Activity timeline monitor
 │   │   ├── apk_collector.py   # APK pull/unpack/repack/sign
 │   │   ├── root_data.py       # Root data collection

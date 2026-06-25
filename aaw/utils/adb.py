@@ -97,3 +97,27 @@ def get_installed_apps():
 def is_adb_available():
     out, code = _run_adb(["version"])
     return code == 0 and out is not None
+
+
+def install_apk(apk_path: str) -> tuple[bool, str]:
+    if not is_adb_available():
+        return False, "adb not found on PATH"
+
+    out, code = _run_adb(["devices"])
+    if code != 0 or not out:
+        return False, "No ADB device connected"
+    lines = [l for l in out.splitlines() if l.strip() and not l.startswith("List")]
+    if not lines or "\tdevice" not in lines[0]:
+        return False, "No device in 'device' state"
+
+    stdout, code = _run_adb(["install", "-r", "-d", apk_path], timeout=120)
+    if code == 0:
+        return True, stdout.strip() or "Install succeeded"
+    else:
+        err = stdout.strip() or "Unknown error"
+        return False, err
+
+
+def is_apk_built(apk_path: str) -> bool:
+    import os
+    return os.path.isfile(apk_path)

@@ -68,7 +68,7 @@ class HomeScreen(BaseScreen):
         Binding("4", "go('installed_apps')", "Data"),
         Binding("5", "go('workspace_explorer')", "Explorer"),
         Binding("6", "go('installed_apps')", "AI"),
-        Binding("7", "go('installed_apps')", "Reports"),
+        Binding("7", "go('auth_module')", "Auth"),
         Binding("8", "go('installed_apps')", "Settings"),
         Binding("escape", "app.quit", "Exit"),
     ]
@@ -146,7 +146,7 @@ class HomeScreen(BaseScreen):
             ("4", "Collect App Data (Root)", "installed_apps"),
             ("5", "Workspace Explorer", "workspace_explorer"),
             ("6", "AI Workspace", "installed_apps"),
-            ("7", "Reports", "installed_apps"),
+            ("7", "Auth Module", "auth_module"),
             ("8", "Settings", "installed_apps"),
         ]
         with Vertical(id="home-wrap"):

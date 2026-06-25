@@ -13,6 +13,7 @@ from aaw.screens import (
     RootDataCollectorScreen,
     AIWorkspaceScreen,
     WorkspaceExplorerScreen,
+    AuthModuleScreen,
 )
 
 
@@ -127,6 +128,7 @@ class AAW(App):
         "root_data": RootDataCollectorScreen,
         "ai_workspace": AIWorkspaceScreen,
         "workspace_explorer": WorkspaceExplorerScreen,
+        "auth_module": AuthModuleScreen,
     }
 
     def on_mount(self):
@@ -180,3 +182,6 @@ class AAW(App):
 
     def show_workspace_explorer(self, _data=None):
         self.push_screen("workspace_explorer")
+
+    def show_auth_module(self, _data=None):
+        self.push_screen("auth_module")

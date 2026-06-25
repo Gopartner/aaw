@@ -7,6 +7,7 @@ from aaw.screens.apk_collector import APKCollectorScreen
 from aaw.screens.root_data import RootDataCollectorScreen
 from aaw.screens.ai_workspace import AIWorkspaceScreen
 from aaw.screens.workspace_explorer import WorkspaceExplorerScreen
+from aaw.screens.auth_module import AuthModuleScreen
 
 __all__ = [
     "BaseScreen",
@@ -18,4 +19,5 @@ __all__ = [
     "RootDataCollectorScreen",
     "AIWorkspaceScreen",
     "WorkspaceExplorerScreen",
+    "AuthModuleScreen",
 ]

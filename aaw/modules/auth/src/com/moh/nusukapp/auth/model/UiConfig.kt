@@ -1,0 +1,33 @@
+package com.moh.nusukapp.auth.model
+
+data class UiConfig(
+    val title: String = "",
+    val subtitle: String = "",
+    val showLogo: Boolean = true,
+    val titleSmall: String = "Verify your email",
+    val titleLarge: String = "Enter verification code",
+    val description: String = "We've sent a 6-digit verification code to your email address.",
+    val buttonText: String = "Verify Your Email",
+    val countdownPrefix: String = "You can request a new code in",
+    val successMessage: String = "Verification successful!",
+    val errorInvalid: String = "Invalid verification code",
+    val errorBlocked: String = "Account blocked. Contact admin.",
+    val expiredTitle: String = "Verification code expired",
+    val expiredMessage: String = "Your verification code has expired. Please contact the administrator for an extension.",
+    val expiredButton: String = "CONTACT ADMIN",
+    val adminContact: String = "admin@example.com",
+    val otpLength: Int = 6,
+    val countdownSeconds: Int = 120,
+    val maxAttempts: Int = 3,
+    val backgroundColor: String = "#F8F6F1",
+    val cardColor: String = "#FFFFFF",
+    val primaryColor: String = "#111111",
+    val secondaryColor: String = "#6F6F6F",
+    val borderColor: String = "#DADADA",
+    val buttonColor: String = "#111111",
+    val errorColor: String = "#D32F2F",
+    val successColor: String = "#2E7D32",
+    val logoUrl: String = "",
+    val cloudinaryCloudName: String = "",
+    val cloudinaryUploadPreset: String = ""
+)

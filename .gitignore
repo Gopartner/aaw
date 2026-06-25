@@ -12,6 +12,15 @@ env/
 # Logs
 aaw/logs/*.log
 
+# Android build artifacts
+*.apk
+*.dex
+*.class
+*.jar
+*.flat
+*.idsig
+build/
+
 # IDE
 .vscode/
 .idea/
@@ -21,7 +30,3 @@ aaw/logs/*.log
 # OS
 Thumbs.db
 .DS_Store
-
-# Project
-output/
-*.apk

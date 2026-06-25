@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_radius">32dp</dimen>
+    <dimen name="card_padding">28dp</dimen>
+    <dimen name="card_max_width">480dp</dimen>
+    <dimen name="otp_width">54dp</dimen>
+    <dimen name="otp_height">68dp</dimen>
+    <dimen name="otp_radius">16dp</dimen>
+    <dimen name="otp_border">1dp</dimen>
+    <dimen name="otp_spacing">12dp</dimen>
+    <dimen name="btn_height">58dp</dimen>
+    <dimen name="btn_radius">29dp</dimen>
+    <dimen name="title_small_size">18sp</dimen>
+    <dimen name="title_large_size">38sp</dimen>
+    <dimen name="description_size">16sp</dimen>
+    <dimen name="button_text_size">18sp</dimen>
+    <dimen name="content_padding">24dp</dimen>
+</resources>
